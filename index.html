@@ -19,7 +19,7 @@
             ///document.getElementById(this.id).style.backgroundImage = "url('img/0.png'");
             //alert('ttt');
 
-            var el, s, result, divs, t;
+            var el, s, result, divs, t, id, sss = 0;
 
             function doc_keyUp(e) {
 
@@ -53,155 +53,87 @@
                     computerMove();
                 }
 
+                //sss=0;
 
                 if (e.keyCode == 39) {
 
-                //     console.log('');
-                //     console.log('');
-                //     console.log('');
+                    // console.log(sss);
+
+                    result = cards.filter(cards => cards.status == 1);
 
 
+                    for (let i = sss; i < result.length; i++) {
 
-               // el.classList.contains(class);
+                        el = document.getElementById(result[i].id);
 
-                result = cards.filter(cards => cards.status == 1);
+                        if (el.classList.contains("selected-card")) {
 
-               
-                for (let i = 0; i < result.length; i++) {
-
-              //  console.log(result[i].id);
-
-             //   console.log(document.getElementById(result[i].id));
-
-            el = document.getElementById(result[i].id);
+                            el.classList.remove("selected-card");
 
 
- if (document.getElementById(result[i].id).style.border == "1px solid red") {
-
-  //alert(document.getElementById(result[i].id).style.border);
-
-   //document.getElementById(result[i].id).style.border="1px solid green!important";
-//document.getElementById(result[i].id).style.border = "0";
-el.classList.remove("selected-card");
-    
-t = i+1;    
-
-// console.log(document.getElementById(result[t].id));
-
-//     //document.getElementById(result[t].id).style.border = "1px solid red";
-el = document.getElementById(result[t].id);
-
-s = cards.map(e => e.id).indexOf(result[t].id);
-
- }
-
- else {
+                            if(sss < result.length-1) t = i + 1; 
 
 
-  //  document.getElementById(result[0].id).style.border = "1px solid red";
-  
-el=document.getElementById(result[0].id);
-el.classList.add("selected-card");
+                            el = document.getElementById(result[t].id);
 
-s = cards.map(e => e.id).indexOf(result[0].id);
+                            s = cards.map(e => e.id).indexOf(result[t].id);
 
- }
+                            if(sss < result.length-1) sss = i + 1;
+                            else sss=0;
 
-                //     if (!el.style.border) {
-                //     el.style.border = "1px solid red";
-                //     el.classList.add("selected-card");
-                //    return false;
-                //     }
+                        }
 
+                        else {
 
-
-
-
-              //  divs[i] = result[i].id;
-               // divs.push(document.getElementById(result[i].id));
-               // divs.splice(index, 0, item);
-
-                }
-
-                //divs.push(document.getElementById('311'));
-                //divs.push(document.getElementById('406'));
-
-               
-               
-// selectionDiv = document.getElementById(result[0].id);
+                            el = document.getElementById(result[i].id);
+                            el.classList.add("selected-card");
+                            s = cards.map(e => e.id).indexOf(result[i].id);
+                            return false;
+                        }
 
 
-// for(var i = 0; i < result.length;i++)
-//  {
-//  if(divs[i] == selectionDiv)
-//  {
-// //      var previous = divs[i - 1];
-// //      var next = divs[i + 1];
-//  }
-//  }
+                    }
 
-
-
-                
-
-              //  console.log(s);
-
-                   // el = document.getElementById(result[0].id);
-                    // console.log(el.id);
-
-                    //s = 0;
-
-                    // for (let i = 0; i < cards.length; i++) {
-                    //     if (cards[i].status === 1) {
-                    //         el = document.getElementById(cards[i].id);
-                    //         s = i;
-                //     if (!el.style.border) {
-                //     el.style.border = "1px solid red";
-                //     el.classList.add("selected-card");
-                //    return false;
-                //     }
-                    //     }
-                    // }
-
-
-               // if (!el.style.border) {
-
-             //   el.style.border = "1px solid red";
-                //     el.classList.add("selected-card");
-                //    return false;
-                //     }
-                    //     }
-                    
-                //}
-
-
-                // if (el.style.border) {
-                    
-                //     el.style.border = "1px solid red";
-
-                //     //     el.classList.add("selected-card");
-                //     //    return false;
-                //     //     }
-                //     //     }
-
-                //     }
 
                 }
 
 
                 if (e.keyCode == 37) {
 
-                    // for (let i = 0; i < cards.length; i++) {
-                    //     if (cards[i].status === 1) {
-                    //         el = document.getElementById(cards[i].id);
-                    //         s = i;
-                    //        if (!el.style.border) {
-                    //        el.style.border = "1px solid red";
-                    //            el.classList.add("selected-card");
-                    //         break;
-                    //        }
-                    //     }
-                    // }
+                    result = cards.filter(cards => cards.status == 1);
+
+
+                    for (let i = sss; i < result.length; i++) {
+
+                        el = document.getElementById(result[i].id);
+
+                        if (el.classList.contains("selected-card")) {
+
+                            el.classList.remove("selected-card");
+
+
+                            if(sss < result.length-1) t = i + 1; 
+
+
+                            el = document.getElementById(result[t].id);
+
+                            s = cards.map(e => e.id).indexOf(result[t].id);
+
+                            if(sss < result.length-1) sss = i + 1;
+                            else sss=0;
+
+                        }
+
+                        else {
+
+                            el = document.getElementById(result[i].id);
+                            el.classList.add("selected-card");
+                            s = cards.map(e => e.id).indexOf(result[i].id);
+                            return false;
+                        }
+
+
+                    } 
 
                 }
 
@@ -209,7 +141,7 @@ s = cards.map(e => e.id).indexOf(result[0].id);
 
                 if (e.keyCode == 13) {
                     // console.log(s);
-                    el.style.border="";
+                    el.classList.remove("selected-card");
                     moveToCenter(s);
                 }
 
