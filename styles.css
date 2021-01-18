@@ -46,3 +46,6 @@ body {
     top: 8px;
     left: 8px;
 }
+.selected-card{
+    border:1px solid red;
+}
