@@ -19,6 +19,7 @@ body {
     position: absolute;
     top: 500px;
     left: 100px;
+    display: none;
 }
 .card{
     position: absolute;
@@ -48,4 +49,20 @@ body {
 }
 .selected-card{
     border:1px solid red;
+}
+#canvas{
+    /* border: 1px solid red; */
+    height: 500px;
+    width: 684px;
+    margin: 0 auto;
+    display: block;
+    position:  relative;
+}
+
+#instruction {
+    width: 684px;
+    margin: 0 auto;
+    display: block;
+    position:  relative;
+   color:white
 }

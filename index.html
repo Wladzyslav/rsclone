@@ -6,12 +6,19 @@
     <title></title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
-    <div id="canvas" class="game-filed"></div>
-    <button id="next_move" class="next_button">Next move</button>
+    <div id="canvas" class="game-filed"><button id="next_move" class="next_button">Next move</button>
+
+    </div>
+    <div id="instruction">
+        <ul style="padding: 20px ">
+        <li>left - go through cards to left</li>
+        <li>right - go through cards to right</li>
+        <li>Enter - send card to deck</li>
+        <li>up - move cards out</li>
+    </div>
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -24,6 +31,45 @@
             function doc_keyUp(e) {
 
                 console.log(e.keyCode);
+
+
+                if (e.keyCode == 37) {
+                    result = cards.filter(cards => cards.status == 1);
+
+
+                    for (let i = sss; i < result.length; i--) {
+
+                        el = document.getElementById(result[i].id);
+
+                        if (el.classList.contains("selected-card")) {
+
+                            console.log('111');
+
+                            el.classList.remove("selected-card");
+                            if (sss < result.length - 1) t = i - 1;
+                            el = document.getElementById(result[t].id);
+                            s = cards.map(e => e.id).indexOf(result[t].id);
+                            if (sss < result.length - 1) sss = i - 1;
+                            else sss = 0;
+
+                        }
+
+                        else {
+
+                            console.log('222');
+
+                            console.log(result[i].id);
+
+                            el = document.getElementById(result[i].id);
+                            el.classList.add("selected-card");
+                            s = cards.map(e => e.id).indexOf(result[i].id);
+                            return false;
+                        }
+
+
+                    }
+
+                }
 
                 // this would test for whichever key is 40 and the ctrl key at the same time
                 if (e.keyCode == 38) { //e.ctrlKey &&
@@ -50,7 +96,7 @@
                     refillSecondHand();
                     renderSecondHand();
                     centerStack = [];
-                    computerMove();
+                    computerMove();/**/
                 }
 
                 //sss=0;
@@ -71,15 +117,15 @@
                             el.classList.remove("selected-card");
 
 
-                            if(sss < result.length-1) t = i + 1; 
+                            if (sss < result.length - 1) t = i + 1;
 
 
                             el = document.getElementById(result[t].id);
 
                             s = cards.map(e => e.id).indexOf(result[t].id);
 
-                            if(sss < result.length-1) sss = i + 1;
-                            else sss=0;
+                            if (sss < result.length - 1) sss = i + 1;
+                            else sss = 0;
 
                         }
 
@@ -97,45 +143,6 @@
 
                 }
 
-
-                if (e.keyCode == 37) {
-
-                    result = cards.filter(cards => cards.status == 1);
-
-
-                    for (let i = sss; i < result.length; i++) {
-
-                        el = document.getElementById(result[i].id);
-
-                        if (el.classList.contains("selected-card")) {
-
-                            el.classList.remove("selected-card");
-
-
-                            if(sss < result.length-1) t = i + 1; 
-
-
-                            el = document.getElementById(result[t].id);
-
-                            s = cards.map(e => e.id).indexOf(result[t].id);
-
-                            if(sss < result.length-1) sss = i + 1;
-                            else sss=0;
-
-                        }
-
-                        else {
-
-                            el = document.getElementById(result[i].id);
-                            el.classList.add("selected-card");
-                            s = cards.map(e => e.id).indexOf(result[i].id);
-                            return false;
-                        }
-
-
-                    } 
-
-                }
 
 
 
