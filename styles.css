@@ -19,7 +19,7 @@ body {
     position: absolute;
     top: 500px;
     left: 100px;
-    display: none;
+    display: block;
 }
 .card{
     position: absolute;
@@ -120,3 +120,6 @@ list-style-type: none!important;
     display: inline-block;
     border-radius: 1px solid #000;
   }
+  /* #name {
+      margin-bottom: 5px;
+  } */
