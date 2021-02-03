@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <div id="canvas" class="game-filed">
+
+    </div>
+    <div id="instruction">
+        <ul style="padding: 20px ">
+        <li><em>→</em> - move to left</li>
+        <li><em>←</em> - move to right</li>
+        <li><em>↑</em> - move cards out or take it</li>
+        <li><em>↵</em> - move selected card to center</li>
+        </ul>
+        
+    </div>
+<button id="next_move" class="next_button">Next move</button>
+    <div id="box">
+        <i class="fas fa-check-circle fa-5x"></i> 
+        <h1 id="congratulate"></h1>
+        <form id="start">
+
+Enter your name:<BR/>
+ <input type="text" id="name"><BR/>
+
+    <button type="button" onclick="StoreData();return false;">START GAME</button>
+</form> 
+      </div>
+      
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,127 @@
+body {
+    background:green;
+}
+
+.red-text{
+    color: red;
+    background: blue;
+}
+.card-back{
+    position: absolute;
+    width: 75px;
+    height: 110px;
+    background-repeat: no-repeat;
+    transition-property: left top;
+    transition-duration: 1s;
+}
+
+.next_button{
+    /* position: absolute;
+    top: 500px;
+    left: 100px; */
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+}
+.card{
+    position: absolute;
+    width: 72px;
+    height: 100px;
+}
+.game-filed{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.stack-1{
+    top: 2px;
+    left: 2px;
+}
+.stack-2{
+    top: 4px;
+    left: 4px;
+}
+.stack-3{
+    top: 6px;
+    left: 6px;
+}
+.stack-4{
+    top: 8px;
+    left: 8px;
+}
+.selected-card{
+    border:1px solid red;
+}
+#canvas{
+    /* border: 1px solid red; */
+    height: 500px;
+    width: 684px;
+    margin: 0 auto;
+    display: block;
+    position:  relative;
+}
+
+#instruction {
+    width: 684px;
+    margin: 0 auto;
+    display: block;
+    position:  relative;
+   color:white
+}
+
+#instruction > ul > li
+{
+list-style-type: none!important;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: lightgrey;
+    font-size: 20px;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+  }
+  
+  #box{
+    /* width: 500px; */
+    overflow: hidden;
+    background: lightgrey;
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+    display: none;
+  }
+  
+  #box span{
+    color: gray;
+    font-size: 40px;
+    display: block;
+    margin: 20px 0;
+  }
+  
+  #box h1{
+    color: white
+  }
+  
+  .close{
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(111, 111, 223);
+    display: inline-block;
+    border-radius: 1px solid #000;
+  }
+  /* #name {
+      margin-bottom: 5px;
+  } */
