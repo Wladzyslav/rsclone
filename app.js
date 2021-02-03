@@ -483,6 +483,7 @@ function setupClickHandlers() {
 
 function StoreData() {
     var inputEmail = document.getElementById("name");
+    if(inputEmail!='') {
     localStorage.setItem("name", inputEmail.value);
     pop();
     stackSetup();
@@ -495,6 +496,7 @@ function StoreData() {
     renderCenter();
     renderTrash();
     setupClickHandlers();
+    }
 }
 //Initial game setup
 localStorage.removeItem("name");
