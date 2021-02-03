@@ -10,17 +10,17 @@
 </head>
 
 <body>
-    <div id="canvas" class="game-filed"><button id="next_move" class="next_button">Next move</button>
+    <div id="canvas" class="game-filed">
 
     </div>
     <div id="instruction">
         <ul style="padding: 20px ">
         <li><em>→</em> - move to left</li>
         <li><em>←</em> - move to right</li>
-        <li><em>↑</em> - move cards out</li>
+        <li><em>↑</em> - move cards out or take it</li>
         <li><em>↵</em> - move selected card to center</li>
     </div>
-    <!-- <a class="btn" onclick="pop()">Show Box</a> -->
+
     <div id="box">
         <i class="fas fa-check-circle fa-5x"></i> 
         <h1 id="congratulate"></h1>
@@ -31,9 +31,8 @@ Enter your name:<BR/>
 
     <button type="button" onclick="StoreData();return false;">START GAME</button>
 </form> 
-        <!-- <a class="close" onclick="pop()">Close Box</a> -->
       </div>
-    
+      <button id="next_move" class="next_button">Next move</button>
 </body>
 <script src="app.js"></script>
 </html>
